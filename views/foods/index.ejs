@@ -9,19 +9,16 @@
   <body>
     <%- include ('../partials/_navbar.ejs') %>
     <h1>Welcome to your pantry!</h1>
-
     <ul>
       <% pantry.forEach((pantry)=> { %>
       <li>
         <%= pantry.food %> (total: <%= pantry.total %>)
-
         <form
           action="/users/<%= user._id %>/foods/<%= pantry._id %>?_method=DELETE"
           method="POST"
         >
           <button type="submit">Delete</button>
         </form>
-
         <form
           action="/users/<%= user._id %>/foods/<%= pantry._id %>/edit"
           method="GET"
@@ -31,7 +28,6 @@
       </li>
       <% }) %>
     </ul>
-
     <a href="/users/<%= user._id %>/foods/new">Add an item to your pantry</a>
   </body>
 </html>
